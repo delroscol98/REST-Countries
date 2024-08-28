@@ -20,6 +20,12 @@ html {
   font-family: "Nunito Sans", sans-serif;
 }
 
+@media screen and (width < 23.4375em) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   min-height: 100vh;
   box-sizing: border-box;

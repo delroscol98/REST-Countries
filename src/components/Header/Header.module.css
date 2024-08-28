@@ -1,0 +1,34 @@
+.header {
+  padding: 3rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0562);
+}
+
+@media screen and (width > 48em) {
+  .header {
+    padding: 2.3rem 8.1rem;
+  }
+}
+
+.header__heading {
+  font-size: clamp(1.4rem, 3.7333333333vw, 2.4rem);
+  font-weight: 800;
+  line-height: calc(20 / 14);
+}
+
+.header__btn {
+  display: flex;
+  gap: 0.8rem;
+  border: none;
+  background: transparent;
+}
+
+.header__btn:hover {
+  cursor: pointer;
+}
+
+.header__btnIcon {
+  height: 1.6rem;
+}
