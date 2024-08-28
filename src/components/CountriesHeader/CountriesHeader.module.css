@@ -1,0 +1,31 @@
+.countriesHeader {
+}
+
+.countriesHeader__searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+  background-color: var(--white);
+  padding: 1.6rem 3.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.0532);
+  max-width: 48rem;
+}
+
+.countriesHeader__searchIcon {
+  height: 1.6rem;
+}
+
+.countriesHeader__searchIcon path {
+  stroke: var(--dark-grey);
+}
+
+.countriesHeader__searchInput {
+  font-family: "Nunito Sans", sans-serif;
+  border: none;
+  background: transparent;
+}
+
+.countriesHeader__searchInput:focus {
+  outline: none;
+}

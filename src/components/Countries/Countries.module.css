@@ -1,3 +1,10 @@
 .countries {
   background-color: var(--light-grey);
+  padding: 2.4rem 1.6rem;
+}
+
+@media screen and (width > 48em) {
+  .countries {
+    padding: 4.8rem 8rem;
+  }
 }

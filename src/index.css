@@ -2,7 +2,7 @@
   --dark-blue-1: hsl(209, 23%, 22%);
   --dark-blue-2: hsl(207, 26%, 17%);
   --dark-blue-3: hsl(200, 15%, 8%);
-  --dark-grey: hsl(0, 0%, 52%);
+  --dark-grey: #858585;
   --light-grey: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
 }
