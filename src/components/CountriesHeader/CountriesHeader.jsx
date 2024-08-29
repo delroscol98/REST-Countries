@@ -5,9 +5,15 @@ import { useState } from "react";
 
 function CountriesHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [option, setOption] = useState("Filter by Region");
 
   const handleOpenDropdown = () => {
     setIsOpen(() => !isOpen);
+  };
+
+  const handleSelectOption = (e) => {
+    setOption(e.target.innerHTML);
+    setIsOpen(false);
   };
 
   return (
@@ -25,18 +31,39 @@ function CountriesHeader() {
           className={styles.countriesHeader__dropdownBtn}
           onClick={handleOpenDropdown}
         >
-          Filter by Region
+          {option}
           <ChevronIcon className={styles.countriesHeader__dropdownIcon} />
         </button>
         {isOpen && (
           <ul className={styles.countriesHeader__dropdownList}>
-            <li className={styles.countriesHeader__dropdownListItem}>Africa</li>
-            <li className={styles.countriesHeader__dropdownListItem}>
+            <li
+              className={styles.countriesHeader__dropdownListItem}
+              onClick={handleSelectOption}
+            >
+              Africa
+            </li>
+            <li
+              className={styles.countriesHeader__dropdownListItem}
+              onClick={handleSelectOption}
+            >
               America
             </li>
-            <li className={styles.countriesHeader__dropdownListItem}>Asia</li>
-            <li className={styles.countriesHeader__dropdownListItem}>Europe</li>
-            <li className={styles.countriesHeader__dropdownListItem}>
+            <li
+              className={styles.countriesHeader__dropdownListItem}
+              onClick={handleSelectOption}
+            >
+              Asia
+            </li>
+            <li
+              className={styles.countriesHeader__dropdownListItem}
+              onClick={handleSelectOption}
+            >
+              Europe
+            </li>
+            <li
+              className={styles.countriesHeader__dropdownListItem}
+              onClick={handleSelectOption}
+            >
               Oceania
             </li>
           </ul>
