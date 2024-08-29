@@ -1,5 +1,6 @@
 import Countries from "./components/Countries/Countries";
 import CountriesHeader from "./components/CountriesHeader/CountriesHeader";
+import CountriesList from "./components/CountriesList/CountriesList";
 import Header from "./components/Header/Header";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Countries>
         <CountriesHeader />
+        <CountriesList />
       </Countries>
     </>
   );

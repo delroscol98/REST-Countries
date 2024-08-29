@@ -1,0 +1,35 @@
+.country {
+  width: 100%;
+  height: 33.6rem;
+  background: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.0294);
+}
+
+.country__flag {
+  width: 100%;
+  height: 16rem;
+}
+
+.country__container {
+  padding: 2.4rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.country__name {
+  font-size: 1.8rem;
+  line-height: calc(26 / 18);
+}
+
+.country__details {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.country__population,
+.country__region,
+.country__capital {
+  font-size: 1.4rem;
+  line-height: calc(16 / 14);
+}
