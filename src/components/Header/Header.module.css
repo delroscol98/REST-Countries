@@ -4,6 +4,12 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0562);
+  background: var(--white);
+  transition: all 0.2s;
+}
+
+.header.darkTheme1 {
+  background: var(--dark-blue-1);
 }
 
 @media screen and (width > 48em) {
@@ -17,6 +23,11 @@
   font-weight: 800;
   line-height: calc(20 / 14);
   color: var(--dark-blue-3);
+  transition: all 0.2s;
+}
+
+.header__heading.darkTheme1 {
+  color: var(--white);
 }
 
 .header__btn {
@@ -25,6 +36,11 @@
   border: none;
   background: transparent;
   color: var(--dark-blue-3);
+  transition: all 0.2s;
+}
+
+.header__btn.darkTheme1 {
+  color: var(--white);
 }
 
 .header__btn:hover {
@@ -37,4 +53,9 @@
 
 .header__btnIcon path {
   stroke: var(--dark-blue-3);
+  transition: all 0.2s;
+}
+
+.header__btnIcon.darkTheme1 path {
+  stroke: var(--white);
 }

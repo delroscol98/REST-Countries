@@ -6,10 +6,27 @@ function Header() {
   const { isDarkTheme, handleDarkTheme } = useTheme();
 
   return (
-    <header className={styles.header}>
-      <h1 className={styles.header__heading}>Where in the world?</h1>
-      <button className={styles.header__btn} onClick={handleDarkTheme}>
-        <Icon className={styles.header__btnIcon} />
+    <header
+      className={`${styles.header} ${isDarkTheme ? styles.darkTheme1 : ""}`}
+    >
+      <h1
+        className={`${styles.header__heading} ${
+          isDarkTheme ? styles.darkTheme1 : ""
+        }`}
+      >
+        Where in the world?
+      </h1>
+      <button
+        className={`${styles.header__btn} ${
+          isDarkTheme ? styles.darkTheme1 : ""
+        }`}
+        onClick={handleDarkTheme}
+      >
+        <Icon
+          className={`${styles.header__btnIcon} ${
+            isDarkTheme ? styles.darkTheme1 : ""
+          }`}
+        />
         Dark Mode
       </button>
     </header>
