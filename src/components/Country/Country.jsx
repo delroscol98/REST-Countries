@@ -1,25 +1,47 @@
+import useTheme from "../../hooks/useTheme";
 import styles from "./Country.module.css";
 
 function Country({ country }) {
+  const { isDarkTheme } = useTheme();
   return (
-    <article className={styles.country}>
+    <article
+      className={`${styles.country} ${isDarkTheme ? styles.darkTheme : ""}`}
+    >
       <img
         className={styles.country__flag}
         src={country.flags.png}
         alt={`${country.demonym} flag`}
       />
       <div className={styles.country__container}>
-        <h2 className={styles.country__name}>{country.name}</h2>
+        <h2
+          className={`${styles.country__name} ${
+            isDarkTheme ? styles.darkTheme : ""
+          }`}
+        >
+          {country.name}
+        </h2>
         <div className={styles.country__details}>
-          <p className={styles.country__population}>
+          <p
+            className={`${styles.country__population} ${
+              isDarkTheme ? styles.darkTheme : ""
+            }`}
+          >
             <strong>Population: </strong>
             {country.population}
           </p>
-          <p className={styles.country__region}>
+          <p
+            className={`${styles.country__region} ${
+              isDarkTheme ? styles.darkTheme : ""
+            }`}
+          >
             <strong>Region: </strong>
             {country.region}
           </p>
-          <p className={styles.country__capital}>
+          <p
+            className={`${styles.country__capital} ${
+              isDarkTheme ? styles.darkTheme : ""
+            }`}
+          >
             <strong>Capital: </strong>
             {country.capital}
           </p>
