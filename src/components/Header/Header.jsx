@@ -7,24 +7,24 @@ function Header() {
 
   return (
     <header
-      className={`${styles.header} ${isDarkTheme ? styles.darkTheme1 : ""}`}
+      className={`${styles.header} ${isDarkTheme ? styles.darkTheme : ""}`}
     >
       <h1
         className={`${styles.header__heading} ${
-          isDarkTheme ? styles.darkTheme1 : ""
+          isDarkTheme ? styles.darkTheme : ""
         }`}
       >
         Where in the world?
       </h1>
       <button
         className={`${styles.header__btn} ${
-          isDarkTheme ? styles.darkTheme1 : ""
+          isDarkTheme ? styles.darkTheme : ""
         }`}
         onClick={handleDarkTheme}
       >
         <Icon
           className={`${styles.header__btnIcon} ${
-            isDarkTheme ? styles.darkTheme1 : ""
+            isDarkTheme ? styles.darkTheme : ""
           }`}
         />
         Dark Mode

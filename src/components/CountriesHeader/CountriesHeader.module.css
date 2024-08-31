@@ -22,6 +22,11 @@
   width: 100%;
   max-width: 48rem;
   align-self: flex-start;
+  transition: all 0.2s;
+}
+
+.countriesHeader__searchContainer.darkTheme {
+  background-color: var(--dark-blue-1);
 }
 
 .countriesHeader__searchIcon {
@@ -29,7 +34,12 @@
 }
 
 .countriesHeader__searchIcon path {
-  stroke: var(--dark-grey);
+  stroke: var(--dark-blue-3);
+  transition: all 0.2s;
+}
+
+.countriesHeader__searchIcon.darkTheme path {
+  stroke: var(--white);
 }
 
 .countriesHeader__searchInput {
@@ -37,6 +47,16 @@
   border: none;
   width: 100%;
   background: transparent;
+  color: var(--dark-blue-3);
+  transition: all 0.2;
+}
+
+.countriesHeader__searchInput.darkTheme {
+  color: var(--white);
+}
+
+.countriesHeader__searchInput.darkTheme::placeholder {
+  color: var(--white);
 }
 
 .countriesHeader__searchInput:focus {
@@ -62,6 +82,12 @@
   border: none;
   border-radius: 0.5rem;
   box-shadow: var(--drop-shadow);
+  transition: all 0.2s;
+}
+
+.countriesHeader__dropdownBtn.darkTheme {
+  background: var(--dark-blue-1);
+  color: var(--white);
 }
 
 .countriesHeader__dropdownBtn:hover {
@@ -72,8 +98,18 @@
   height: 1rem;
 }
 
+.countriesHeader__dropdownIcon path {
+  stroke: var(--dark-blue-3);
+  transition: all 0.2s;
+}
+
+.countriesHeader__dropdownIcon.darkTheme path {
+  stroke: var(--white);
+}
+
 .countriesHeader__dropdownList {
   background: var(--white);
+  color: var(--dark-blue-3);
   list-style: none;
   padding: 1.6rem 2.4rem;
   display: flex;
@@ -84,6 +120,11 @@
   position: absolute;
   width: 100%;
   top: 5.2rem;
+}
+
+.countriesHeader__dropdownList.darkTheme {
+  background: var(--dark-blue-1);
+  color: var(--white);
 }
 
 .countriesHeader__dropdownListItem {

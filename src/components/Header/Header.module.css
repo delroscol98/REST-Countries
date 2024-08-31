@@ -8,7 +8,7 @@
   transition: all 0.2s;
 }
 
-.header.darkTheme1 {
+.header.darkTheme {
   background: var(--dark-blue-1);
 }
 
@@ -26,7 +26,7 @@
   transition: all 0.2s;
 }
 
-.header__heading.darkTheme1 {
+.header__heading.darkTheme {
   color: var(--white);
 }
 
@@ -39,7 +39,7 @@
   transition: all 0.2s;
 }
 
-.header__btn.darkTheme1 {
+.header__btn.darkTheme {
   color: var(--white);
 }
 
@@ -56,6 +56,6 @@
   transition: all 0.2s;
 }
 
-.header__btnIcon.darkTheme1 path {
+.header__btnIcon.darkTheme path {
   stroke: var(--white);
 }

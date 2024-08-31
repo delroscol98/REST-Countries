@@ -6,7 +6,7 @@ function Countries({ children }) {
 
   return (
     <div
-      className={`${styles.countries} ${isDarkTheme ? styles.darkTheme2 : ""}`}
+      className={`${styles.countries} ${isDarkTheme ? styles.darkTheme : ""}`}
     >
       {children}
     </div>
