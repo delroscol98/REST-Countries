@@ -96,6 +96,11 @@
 
 .countriesHeader__dropdownIcon {
   height: 1rem;
+  transition: all 0.2s;
+}
+
+.countriesHeader__dropdownIcon.isOpen {
+  transform: rotate(180deg);
 }
 
 .countriesHeader__dropdownIcon path {
@@ -120,6 +125,9 @@
   position: absolute;
   width: 100%;
   top: 5.2rem;
+  transition: all 0.2s;
+  transform-origin: top center;
+  animation: DropDownGrow 0.2s ease-in-out;
 }
 
 .countriesHeader__dropdownList.darkTheme {
@@ -134,4 +142,14 @@
 
 .countriesHeader__dropdownListItem:hover {
   cursor: pointer;
+}
+
+@keyframes DropDownGrow {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
 }

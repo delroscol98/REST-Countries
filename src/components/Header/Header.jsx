@@ -1,5 +1,6 @@
 import styles from "./Header.module.css";
-import Icon from "../../../public/images/moon-outline.svg";
+import DarkIcon from "../../../public/images/moon-outline.svg";
+import LightIcon from "../../../public/images/sunny-outline.svg";
 import useTheme from "../../hooks/useTheme";
 
 function Header() {
@@ -22,12 +23,14 @@ function Header() {
         }`}
         onClick={handleDarkTheme}
       >
-        <Icon
-          className={`${styles.header__btnIcon} ${
-            isDarkTheme ? styles.darkTheme : ""
-          }`}
-        />
-        Dark Mode
+        {isDarkTheme ? (
+          <LightIcon
+            className={`${styles.header__btnIcon} ${styles.darkTheme}`}
+          />
+        ) : (
+          <DarkIcon className={styles.header__btnIcon} />
+        )}
+        {isDarkTheme ? "Light Mode " : "Dark Mode"}
       </button>
     </header>
   );

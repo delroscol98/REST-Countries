@@ -48,8 +48,8 @@ function CountriesHeader() {
           {option}
           <ChevronIcon
             className={`${styles.countriesHeader__dropdownIcon} ${
-              isDarkTheme ? styles.darkTheme : ""
-            }`}
+              isOpen ? styles.isOpen : ""
+            } ${isDarkTheme ? styles.darkTheme : ""}`}
           />
         </button>
         {isOpen && (
