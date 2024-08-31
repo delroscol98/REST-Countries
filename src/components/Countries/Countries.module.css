@@ -1,6 +1,11 @@
 .countries {
   background-color: var(--light-grey);
   padding: 2.4rem 1.6rem;
+  transition: all 0.2s;
+}
+
+.countries.darkTheme2 {
+  background-color: var(--dark-blue-2);
 }
 
 @media screen and (width > 48em) {
