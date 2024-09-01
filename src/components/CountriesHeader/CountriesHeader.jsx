@@ -3,20 +3,16 @@ import SearchIcon from "../../../public/images/search-outline.svg";
 import ChevronIcon from "../../../public/images/chevron-down-outline.svg";
 import { useState } from "react";
 import useTheme from "../../hooks/useTheme";
+import useCountries from "../../hooks/useCounties";
 
 function CountriesHeader() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [option, setOption] = useState("Filter by Region");
   const { isDarkTheme } = useTheme();
-
-  const handleOpenDropdown = () => {
-    setIsOpen(() => !isOpen);
-  };
-
-  const handleSelectOption = (e) => {
-    setOption(e.target.innerHTML);
-    setIsOpen(false);
-  };
+  const {
+    dropdownOpen,
+    dropdownOption,
+    handleDropdownOpen,
+    handleFilterCountries,
+  } = useCountries();
 
   return (
     <div className={styles.countriesHeader}>
@@ -43,16 +39,16 @@ function CountriesHeader() {
           className={`${styles.countriesHeader__dropdownBtn} ${
             isDarkTheme ? styles.darkTheme : ""
           }`}
-          onClick={handleOpenDropdown}
+          onClick={handleDropdownOpen}
         >
-          {option}
+          {dropdownOption}
           <ChevronIcon
             className={`${styles.countriesHeader__dropdownIcon} ${
-              isOpen ? styles.isOpen : ""
+              dropdownOpen ? styles.isOpen : ""
             } ${isDarkTheme ? styles.darkTheme : ""}`}
           />
         </button>
-        {isOpen && (
+        {dropdownOpen && (
           <ul
             className={`${styles.countriesHeader__dropdownList} ${
               isDarkTheme ? styles.darkTheme : ""
@@ -60,31 +56,31 @@ function CountriesHeader() {
           >
             <li
               className={styles.countriesHeader__dropdownListItem}
-              onClick={handleSelectOption}
+              onClick={() => handleFilterCountries("Africa")}
             >
               Africa
             </li>
             <li
               className={styles.countriesHeader__dropdownListItem}
-              onClick={handleSelectOption}
+              onClick={() => handleFilterCountries("Americas")}
             >
-              America
+              Americas
             </li>
             <li
               className={styles.countriesHeader__dropdownListItem}
-              onClick={handleSelectOption}
+              onClick={() => handleFilterCountries("Asia")}
             >
               Asia
             </li>
             <li
               className={styles.countriesHeader__dropdownListItem}
-              onClick={handleSelectOption}
+              onClick={() => handleFilterCountries("Europe")}
             >
               Europe
             </li>
             <li
               className={styles.countriesHeader__dropdownListItem}
-              onClick={handleSelectOption}
+              onClick={() => handleFilterCountries("Oceania")}
             >
               Oceania
             </li>
