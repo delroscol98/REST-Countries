@@ -4,6 +4,7 @@ import { createContext, useCallback, useEffect, useState } from "react";
 const CountriesContext = createContext();
 
 const initialState = {
+  countries: [],
   countriesList: [],
 };
 
@@ -12,12 +13,13 @@ const reducer = (state, action) => {
     case "fetchCountries":
       return {
         ...state,
+        countries: action.payload,
         countriesList: action.payload,
       };
     case "filterCountries":
       return {
         ...state,
-        countriesList: state.countriesList.filter(
+        countriesList: state.countries.filter(
           (country) => country.region === action.payload
         ),
       };
