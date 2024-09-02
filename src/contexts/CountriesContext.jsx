@@ -6,6 +6,8 @@ const CountriesContext = createContext();
 const initialState = {
   countries: [],
   countriesList: [],
+  dropdownOpen: false,
+  dropdownOption: "Filter by Region",
 };
 
 const reducer = (state, action) => {
@@ -16,9 +18,16 @@ const reducer = (state, action) => {
         countries: action.payload,
         countriesList: action.payload,
       };
+    case "toggleDropdown":
+      return {
+        ...state,
+        dropdownOpen: !state.dropdownOpen,
+      };
     case "filterCountries":
       return {
         ...state,
+        dropdownOpen: false,
+        dropdownOption: action.payload,
         countriesList: state.countries.filter(
           (country) => country.region === action.payload
         ),
@@ -27,9 +36,8 @@ const reducer = (state, action) => {
 };
 
 const CountriesProvider = ({ children }) => {
-  const [{ countriesList }, dispatch] = useReducer(reducer, initialState);
-  const [dropdownOpen, setDropDownOpen] = useState(false);
-  const [dropdownOption, setDropdownOption] = useState("Filter by Region");
+  const [{ countriesList, dropdownOpen, dropdownOption }, dispatch] =
+    useReducer(reducer, initialState);
 
   const fetchCountries = useCallback(async () => {
     try {
@@ -47,12 +55,10 @@ const CountriesProvider = ({ children }) => {
   }, [fetchCountries]);
 
   const handleDropdownOpen = () => {
-    setDropDownOpen(() => !dropdownOpen);
+    dispatch({ type: "toggleDropdown" });
   };
 
   const handleFilterCountries = (region) => {
-    setDropdownOption(region);
-    setDropDownOpen(false);
     dispatch({ type: "filterCountries", payload: region });
   };
 
