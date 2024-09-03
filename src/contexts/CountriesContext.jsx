@@ -31,6 +31,7 @@ const reducer = (state, action) => {
     case "filterCountries":
       return {
         ...state,
+        currentPage: 1,
         dropdownOpen: false,
         dropdownOption: action.payload,
         countriesList: state.countries.filter(
