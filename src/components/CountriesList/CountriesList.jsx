@@ -3,11 +3,11 @@ import Country from "../Country/Country";
 import styles from "./CountriesList.module.css";
 
 function CountriesList() {
-  const { countriesList } = useCountries();
+  const { renderedCountries } = useCountries();
 
   return (
     <div className={styles.countriesList}>
-      {countriesList.map((country) => (
+      {renderedCountries.map((country) => (
         <Country country={country} key={country.name} />
       ))}
     </div>

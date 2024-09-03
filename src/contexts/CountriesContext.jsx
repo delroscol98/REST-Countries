@@ -3,12 +3,16 @@ import { createContext, useCallback, useEffect } from "react";
 
 const CountriesContext = createContext();
 
+const RESULTS_PER_PAGE = 8;
+
 const initialState = {
   countries: [],
   countriesList: [],
   dropdownOpen: false,
   dropdownOption: "",
   searchedCountry: "",
+  currentPage: 1,
+  countriesPerPage: RESULTS_PER_PAGE,
 };
 
 const reducer = (state, action) => {
@@ -46,14 +50,33 @@ const reducer = (state, action) => {
             : country.name.toLowerCase().includes(action.payload.toLowerCase())
         ),
       };
+    case "selectPage":
+      return {
+        ...state,
+        currentPage: action.payload,
+      };
   }
 };
 
 const CountriesProvider = ({ children }) => {
   const [
-    { countriesList, dropdownOpen, dropdownOption, searchedCountry },
+    {
+      countriesList,
+      dropdownOpen,
+      dropdownOption,
+      searchedCountry,
+      currentPage,
+      countriesPerPage,
+    },
     dispatch,
   ] = useReducer(reducer, initialState);
+
+  const lastCountryIndex = currentPage * countriesPerPage;
+  const firstCountryIndex = lastCountryIndex - countriesPerPage;
+  const renderedCountries = countriesList.slice(
+    firstCountryIndex,
+    lastCountryIndex
+  );
 
   const fetchCountries = useCallback(async () => {
     try {
@@ -82,6 +105,10 @@ const CountriesProvider = ({ children }) => {
     dispatch({ type: "searchCountries", payload: e.target.value });
   };
 
+  const handleSelectPage = (page) => {
+    dispatch({ type: "selectPage", payload: page });
+  };
+
   return (
     <CountriesContext.Provider
       value={{
@@ -89,9 +116,13 @@ const CountriesProvider = ({ children }) => {
         dropdownOpen,
         dropdownOption,
         searchedCountry,
+        renderedCountries,
+        currentPage,
+        countriesPerPage,
         handleDropdownOpen,
         handleFilterCountries,
         handleSearchCountries,
+        handleSelectPage,
       }}
     >
       {children}

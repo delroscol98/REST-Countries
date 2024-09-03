@@ -1,0 +1,23 @@
+.pagination {
+  display: flex;
+  gap: 1.6rem;
+  justify-content: center;
+}
+
+.pagination__btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.2rem;
+  border: 1px solid var(--dark-blue-3);
+  border-radius: 50%;
+  background: var(--white);
+  transition: all 0.2s;
+}
+
+.pagination__btn:hover {
+  cursor: pointer;
+  background: var(--dark-blue-3);
+  border: 1px solid var(--white);
+  color: var(--white);
+}
