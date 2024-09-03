@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { createContext, useCallback, useEffect, useState } from "react";
+import { createContext, useCallback, useEffect } from "react";
 
 const CountriesContext = createContext();
 

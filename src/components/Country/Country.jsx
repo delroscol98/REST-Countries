@@ -27,7 +27,7 @@ function Country({ country }) {
             }`}
           >
             <strong>Population: </strong>
-            {country.population}
+            {country.population.toLocaleString()}
           </p>
           <p
             className={`${styles.country__region} ${
