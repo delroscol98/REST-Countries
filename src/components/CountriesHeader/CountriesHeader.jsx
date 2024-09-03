@@ -1,7 +1,6 @@
 import styles from "./CountriesHeader.module.css";
 import SearchIcon from "../../../public/images/search-outline.svg";
 import ChevronIcon from "../../../public/images/chevron-down-outline.svg";
-import { useState } from "react";
 import useTheme from "../../hooks/useTheme";
 import useCountries from "../../hooks/useCounties";
 
@@ -10,8 +9,10 @@ function CountriesHeader() {
   const {
     dropdownOpen,
     dropdownOption,
+    searchedCountry,
     handleDropdownOpen,
     handleFilterCountries,
+    handleSearchCountries,
   } = useCountries();
 
   return (
@@ -32,6 +33,8 @@ function CountriesHeader() {
           }`}
           type="text"
           placeholder="Search for a country..."
+          value={searchedCountry}
+          onChange={handleSearchCountries}
         />
       </div>
       <div className={styles.countriesHeader__dropdown}>
@@ -41,7 +44,7 @@ function CountriesHeader() {
           }`}
           onClick={handleDropdownOpen}
         >
-          {dropdownOption}
+          {dropdownOption ? dropdownOption : "Filter by Region"}
           <ChevronIcon
             className={`${styles.countriesHeader__dropdownIcon} ${
               dropdownOpen ? styles.isOpen : ""

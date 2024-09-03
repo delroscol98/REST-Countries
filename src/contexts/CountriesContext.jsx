@@ -7,7 +7,8 @@ const initialState = {
   countries: [],
   countriesList: [],
   dropdownOpen: false,
-  dropdownOption: "Filter by Region",
+  dropdownOption: "",
+  searchedCountry: "",
 };
 
 const reducer = (state, action) => {
@@ -32,12 +33,27 @@ const reducer = (state, action) => {
           (country) => country.region === action.payload
         ),
       };
+    case "searchCountries":
+      return {
+        ...state,
+        searchedCountry: action.payload,
+        countriesList: state.countries.filter((country) =>
+          state.dropdownOption
+            ? country.name
+                .toLowerCase()
+                .includes(action.payload.toLowerCase()) &&
+              country.region === state.dropdownOption
+            : country.name.toLowerCase().includes(action.payload.toLowerCase())
+        ),
+      };
   }
 };
 
 const CountriesProvider = ({ children }) => {
-  const [{ countriesList, dropdownOpen, dropdownOption }, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    { countriesList, dropdownOpen, dropdownOption, searchedCountry },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   const fetchCountries = useCallback(async () => {
     try {
@@ -62,14 +78,20 @@ const CountriesProvider = ({ children }) => {
     dispatch({ type: "filterCountries", payload: region });
   };
 
+  const handleSearchCountries = (e) => {
+    dispatch({ type: "searchCountries", payload: e.target.value });
+  };
+
   return (
     <CountriesContext.Provider
       value={{
         countriesList,
         dropdownOpen,
         dropdownOption,
+        searchedCountry,
         handleDropdownOpen,
         handleFilterCountries,
+        handleSearchCountries,
       }}
     >
       {children}
