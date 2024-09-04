@@ -11,15 +11,15 @@ function Pagination() {
 
   return (
     <div className={styles.pagination}>
-      {pages.map((page, index) => (
-        <button
-          className={styles.pagination__btn}
-          key={index}
-          onClick={() => handleSelectPage(page)}
-        >
-          {page}
+      <p className={styles.pagination__result}>
+        Showing X to Y results of Z results
+      </p>
+      <div className={styles.pagination__btnContainer}>
+        <button className={styles.pagination__btnContainer__btn}>
+          Previous
         </button>
-      ))}
+        <button className={styles.pagination__btnContainer__btn}>Next</button>
+      </div>
     </div>
   );
 }
