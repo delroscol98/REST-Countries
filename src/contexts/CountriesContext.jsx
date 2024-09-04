@@ -51,10 +51,19 @@ const reducer = (state, action) => {
             : country.name.toLowerCase().includes(action.payload.toLowerCase())
         ),
       };
-    case "selectPage":
+    case "prevPage":
       return {
         ...state,
-        currentPage: action.payload,
+        currentPage: state.currentPage > 1 ? state.currentPage - 1 : 1,
+      };
+    case "nextPage":
+      return {
+        ...state,
+        currentPage:
+          state.currentPage <
+          Math.ceil(state.countriesList.length / state.countriesPerPage)
+            ? state.currentPage + 1
+            : Math.ceil(state.countriesList.length / state.countriesPerPage),
       };
   }
 };
@@ -106,8 +115,12 @@ const CountriesProvider = ({ children }) => {
     dispatch({ type: "searchCountries", payload: e.target.value });
   };
 
-  const handleSelectPage = (page) => {
-    dispatch({ type: "selectPage", payload: page });
+  const handlePrevPage = () => {
+    dispatch({ type: "prevPage" });
+  };
+
+  const handleNextPage = () => {
+    dispatch({ type: "nextPage" });
   };
 
   return (
@@ -123,7 +136,8 @@ const CountriesProvider = ({ children }) => {
         handleDropdownOpen,
         handleFilterCountries,
         handleSearchCountries,
-        handleSelectPage,
+        handlePrevPage,
+        handleNextPage,
       }}
     >
       {children}

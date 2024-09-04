@@ -2,23 +2,33 @@ import useCountries from "../../hooks/useCounties";
 import styles from "./Pagination.module.css";
 
 function Pagination() {
-  const { countriesList, countriesPerPage, handleSelectPage } = useCountries();
-
-  let pages = [];
-  for (let i = 0; i < Math.ceil(countriesList.length / countriesPerPage); i++) {
-    pages.push(i + 1);
-  }
+  const {
+    countriesList,
+    countriesPerPage,
+    currentPage,
+    handlePrevPage,
+    handleNextPage,
+  } = useCountries();
 
   return (
     <div className={styles.pagination}>
       <p className={styles.pagination__result}>
-        Showing X to Y results of Z results
+        Showing page {currentPage} of{" "}
+        {Math.ceil(countriesList.length / countriesPerPage)}
       </p>
       <div className={styles.pagination__btnContainer}>
-        <button className={styles.pagination__btnContainer__btn}>
+        <button
+          className={styles.pagination__btnContainer__btn}
+          onClick={handlePrevPage}
+        >
           Previous
         </button>
-        <button className={styles.pagination__btnContainer__btn}>Next</button>
+        <button
+          className={styles.pagination__btnContainer__btn}
+          onClick={handleNextPage}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
