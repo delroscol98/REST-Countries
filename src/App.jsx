@@ -1,19 +1,23 @@
-import Countries from "./components/Countries/Countries";
-import CountriesHeader from "./components/CountriesHeader/CountriesHeader";
-import CountriesList from "./components/CountriesList/CountriesList";
-import Header from "./components/Header/Header";
-import Pagination from "./components/Pagination/Pagination";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import useCountries from "./hooks/useCounties";
+import CountryRoute from "./pages/CountryRoute/CountryRoute";
+import Homepage from "./pages/HomePage/Homepage";
 
 function App() {
+  const { countriesList } = useCountries();
   return (
-    <>
-      <Header />
-      <Countries>
-        <CountriesHeader />
-        <CountriesList />
-        <Pagination />
-      </Countries>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Homepage />} />
+        {countriesList.map((country) => (
+          <Route
+            key={country.name}
+            path={country.name}
+            element={<CountryRoute country={country} />}
+          />
+        ))}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

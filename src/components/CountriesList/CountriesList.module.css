@@ -18,3 +18,7 @@
     gap: 7.4rem;
   }
 }
+
+.countriesList__link {
+  text-decoration: none;
+}
