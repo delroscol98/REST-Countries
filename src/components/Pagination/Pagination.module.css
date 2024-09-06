@@ -26,22 +26,3 @@
   display: flex;
   gap: 1rem;
 }
-
-.pagination__btnContainer__btn {
-  padding: 1rem;
-  background: var(--white);
-  border: none;
-  border-radius: 0.4rem;
-  box-shadow: var(--drop-shadow);
-  font-family: "Nunito Sans", sans-serif;
-}
-
-.pagination__btnContainer__btn.darkTheme {
-  background: var(--dark-blue-1);
-  color: var(--white);
-  border: 1px solid var(--white);
-}
-
-.pagination__btnContainer__btn:hover {
-  cursor: pointer;
-}

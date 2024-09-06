@@ -18,7 +18,7 @@
   background-color: var(--white);
   padding: 1.6rem 3.2rem;
   border-radius: 0.5rem;
-  box-shadow: var(--drop-shadow);
+  box-shadow: var(--drop-shadow-1);
   width: 100%;
   max-width: 48rem;
   align-self: flex-start;
@@ -81,7 +81,7 @@
   background: var(--white);
   border: none;
   border-radius: 0.5rem;
-  box-shadow: var(--drop-shadow);
+  box-shadow: var(--drop-shadow-1);
   transition: all 0.2s;
 }
 
@@ -121,7 +121,7 @@
   flex-direction: column;
   gap: 0.8rem;
   border-radius: 0.5rem;
-  box-shadow: var(--drop-shadow);
+  box-shadow: var(--drop-shadow-1);
   position: absolute;
   width: 100%;
   top: 5.2rem;

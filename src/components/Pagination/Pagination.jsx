@@ -1,5 +1,6 @@
 import useCountries from "../../hooks/useCounties";
 import useTheme from "../../hooks/useTheme";
+import Button from "../Button/Button";
 import styles from "./Pagination.module.css";
 
 function Pagination() {
@@ -23,22 +24,8 @@ function Pagination() {
         {Math.ceil(countriesList.length / countriesPerPage)}
       </p>
       <div className={styles.pagination__btnContainer}>
-        <button
-          className={`${styles.pagination__btnContainer__btn} ${
-            isDarkTheme ? styles.darkTheme : ""
-          }`}
-          onClick={handlePrevPage}
-        >
-          Previous
-        </button>
-        <button
-          className={`${styles.pagination__btnContainer__btn} ${
-            isDarkTheme ? styles.darkTheme : ""
-          }`}
-          onClick={handleNextPage}
-        >
-          Next
-        </button>
+        <Button onClick={handlePrevPage}>&larr; Previous</Button>
+        <Button onClick={handleNextPage}>Next &rarr;</Button>
       </div>
     </div>
   );

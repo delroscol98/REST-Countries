@@ -5,7 +5,8 @@
   --dark-grey: #858585;
   --light-grey: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
-  --drop-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.0532);
+  --drop-shadow-1: 0 2px 9px 0 rgba(0, 0, 0, 0.0532);
+  --drop-shadow-2: 0 0 7px 0 rgba(0, 0, 0, 0.2931);
 }
 
 *,
