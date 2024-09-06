@@ -6,11 +6,11 @@
   grid-template-columns: repeat(auto-fill, 26.4rem);
 }
 
-/* @media screen and (width > 29.6875em) {
+@media screen and (width > 90em) {
   .countriesList {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 26.4rem);
   }
-} */
+}
 
 @media screen and (width > 48em) {
   .countriesList {
