@@ -15,6 +15,10 @@
   background: var(--dark-blue-2);
 }
 
+.countryRoute__btnContainer {
+  width: 13.2rem;
+}
+
 .countryRoute__container {
   display: grid;
   gap: 4.4rem;

@@ -1,7 +1,6 @@
 .button {
   width: 100%;
-  max-width: 13.6rem;
-  min-height: 3.2rem;
+  height: 100%;
   background: var(--white);
   border: none;
   border-radius: 0.2rem;

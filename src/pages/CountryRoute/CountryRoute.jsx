@@ -17,7 +17,9 @@ function CountryRoute({ country }) {
           isDarkTheme ? styles.darkTheme : ""
         }`}
       >
-        <Button onClick={() => navigate(-1)}>&larr; Back</Button>
+        <div className={styles.countryRoute__btnContainer}>
+          <Button onClick={() => navigate(-1)}>&larr; Back</Button>
+        </div>
         <div className={styles.countryRoute__container}>
           <img
             className={styles.countryRoute__flag}
