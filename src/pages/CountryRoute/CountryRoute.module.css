@@ -1,0 +1,68 @@
+.countryRoute {
+  padding: 4rem 2.8rem;
+  background: inherit;
+}
+
+.countryRoute.darkTheme {
+  background: var(--dark-blue-2);
+}
+
+.countryRoute__container {
+  display: flex;
+  flex-direction: column;
+  gap: 4.4rem;
+  margin-top: 6.4rem;
+}
+
+.countryRoute__flag {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.countryRoute__detailsContainer {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.countryRoute__name {
+  font-weight: 800;
+  font-size: 2.2rem;
+}
+
+.countryRoute__details {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  font-size: 1.4rem;
+  line-height: calc(32 / 14);
+  padding-bottom: 1.8rem;
+}
+
+.countryRoute__detailsSection {
+}
+
+.countryRoute__paraKey {
+  font-weight: 500;
+}
+
+.countryRoute__paraValue {
+  font-weight: 300;
+}
+
+.countryRoute__borderCountries {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.countryRoute__borderCountries__heading {
+  font-size: 1.6rem;
+  line-height: calc(24 / 16);
+}
+
+.countryRoute__borderCountries__btnContainer {
+  display: grid;
+  justify-content: start;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
