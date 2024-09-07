@@ -25,8 +25,18 @@ function CountryRoute({ country }) {
             alt={`${country.denonym} flag`}
           />
           <section className={styles.countryRoute__detailsContainer}>
-            <h1 className={styles.countryRoute__name}>{country.name}</h1>
-            <div className={styles.countryRoute__details}>
+            <h1
+              className={`${styles.countryRoute__name} ${
+                isDarkTheme ? styles.darkTheme : ""
+              }`}
+            >
+              {country.name}
+            </h1>
+            <div
+              className={`${styles.countryRoute__details} ${
+                isDarkTheme ? styles.darkTheme : ""
+              }`}
+            >
               <div className={styles.countryRoute__detailsSection}>
                 <p className={styles.countryRoute__paraKey}>
                   Native Name:&nbsp;
@@ -84,7 +94,11 @@ function CountryRoute({ country }) {
             </div>
             {country.borders && (
               <article className={styles.countryRoute__borderCountries}>
-                <h2 className={styles.countryRoute__borderCountries__heading}>
+                <h2
+                  className={`${
+                    styles.countryRoute__borderCountries__heading
+                  } ${isDarkTheme ? styles.darkTheme : ""}`}
+                >
                   Border Countries:
                 </h2>
                 <div

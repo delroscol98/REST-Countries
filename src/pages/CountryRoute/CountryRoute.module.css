@@ -1,6 +1,13 @@
 .countryRoute {
   padding: 4rem 2.8rem;
   background: inherit;
+  transition: all 0.2s;
+}
+
+@media screen and (width >= 48em) {
+  .countryRoute {
+    padding: 4rem 8.1rem;
+  }
 }
 
 .countryRoute.darkTheme {
@@ -8,14 +15,27 @@
 }
 
 .countryRoute__container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 4.4rem;
   margin-top: 6.4rem;
 }
 
+@media screen and (width >= 64em) {
+  .countryRoute__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (width >= 90em) {
+  .countryRoute__container {
+    gap: 14.4rem;
+    align-items: center;
+  }
+}
+
 .countryRoute__flag {
   width: 100%;
+  max-width: 56rem;
   border-radius: 0.5rem;
 }
 
@@ -26,23 +46,46 @@
 
 .countryRoute__name {
   font-weight: 800;
-  font-size: 2.2rem;
+  font-size: clamp(2.2rem, 5.7142857143rem, 3.2rem);
+  color: var(--dark-blue-3);
+  transition: all 0.2s;
+}
+
+.countryRoute__name.darkTheme {
+  color: var(--white);
 }
 
 .countryRoute__details {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 3.2rem;
   font-size: 1.4rem;
   line-height: calc(32 / 14);
   padding-bottom: 1.8rem;
+  color: var(--dark-blue-3);
+  transition: all 0.2s;
+}
+
+.countryRoute__details.darkTheme {
+  color: var(--white);
+}
+
+@media screen and (width >= 48em) {
+  .countryRoute__details {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
+@media screen and (width >= 90em) {
+  .countryRoute__details {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .countryRoute__detailsSection {
 }
 
 .countryRoute__paraKey {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .countryRoute__paraValue {
@@ -58,11 +101,16 @@
 .countryRoute__borderCountries__heading {
   font-size: 1.6rem;
   line-height: calc(24 / 16);
+  color: var(--dark-blue-3);
+}
+
+.countryRoute__borderCountries__heading.darkTheme {
+  color: var(--white);
 }
 
 .countryRoute__borderCountries__btnContainer {
   display: grid;
   justify-content: start;
   gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
 }

@@ -96,6 +96,7 @@ export const countryCodes = {
   IMN: "Isle of Man",
   ISR: "Israel",
   ITA: "Italy",
+  CIV: "Ivory Coast",
   JAM: "Jamaica",
   JPN: "Japan",
   JEY: "Jersey",
