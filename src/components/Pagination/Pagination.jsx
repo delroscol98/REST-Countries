@@ -24,8 +24,12 @@ function Pagination() {
         {Math.ceil(countriesList.length / countriesPerPage)}
       </p>
       <div className={styles.pagination__btnContainer}>
-        <Button onClick={handlePrevPage}>&larr; Previous</Button>
-        <Button onClick={handleNextPage}>Next &rarr;</Button>
+        {currentPage > 1 && (
+          <Button onClick={handlePrevPage}>&larr; Previous</Button>
+        )}
+        {currentPage !== Math.ceil(countriesList.length / countriesPerPage) && (
+          <Button onClick={handleNextPage}>Next &rarr;</Button>
+        )}
       </div>
     </div>
   );
