@@ -1,4 +1,6 @@
 .button {
+  width: 100%;
+  max-width: 13.6rem;
   min-height: 3.2rem;
   background: var(--white);
   border: none;
@@ -6,10 +8,12 @@
   box-shadow: var(--drop-shadow-2);
   font-family: "Nunito Sans", sans-serif;
   padding: 1rem;
+  transition: all 0.2s;
 }
 
 .button:hover {
   cursor: pointer;
+  transform: translateY(-0.3rem);
 }
 
 .button.darkTheme {
