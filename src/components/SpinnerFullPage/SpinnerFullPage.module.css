@@ -1,0 +1,8 @@
+.spinnerFullpage {
+  height: 100vh;
+  background-color: var(--light-grey);
+}
+
+.spinnerFullpage.darkTheme {
+  background-color: var(--dark-blue-1);
+}
