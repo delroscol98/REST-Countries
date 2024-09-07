@@ -2,6 +2,7 @@
   padding: 4rem 2.8rem;
   background: inherit;
   transition: all 0.2s;
+  height: calc(100vh - 8rem);
 }
 
 @media screen and (width >= 48em) {
@@ -81,9 +82,6 @@
   }
 }
 
-.countryRoute__detailsSection {
-}
-
 .countryRoute__paraKey {
   font-weight: 600;
 }
@@ -112,5 +110,5 @@
   display: grid;
   justify-content: start;
   gap: 1rem;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(auto-fill, 9.6rem);
 }
