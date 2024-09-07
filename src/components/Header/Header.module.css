@@ -26,6 +26,10 @@
   transition: all 0.2s;
 }
 
+.header__heading:hover {
+  cursor: pointer;
+}
+
 .header__heading.darkTheme {
   color: var(--white);
 }

@@ -92,7 +92,6 @@ const CountriesProvider = ({ children }) => {
     try {
       const res = await fetch("./data/data.json");
       const data = await res.json();
-      console.log(data);
       dispatch({ type: "fetchCountries", payload: data });
     } catch (err) {
       throw new Error("Unable to fetch countries");

@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
         {countriesList.map((country) => (
           <Route
             key={country.name}
