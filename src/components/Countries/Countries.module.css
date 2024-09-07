@@ -2,6 +2,7 @@
   background-color: var(--light-grey);
   padding: 2.4rem 1.6rem;
   transition: all 0.2s;
+  min-height: calc(100vh - 8rem);
 }
 
 .countries.darkTheme {
