@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import useCountries from "./hooks/useCounties";
 import SpinnerFullPage from "./components/SpinnerFullPage/SpinnerFullPage";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 const Homepage = lazy(() => import("./pages/HomePage/Homepage"));
 const CountryRoute = lazy(() => import("./pages/CountryRoute/CountryRoute"));
@@ -20,6 +21,7 @@ function App() {
               element={<CountryRoute country={country} />}
             />
           ))}
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

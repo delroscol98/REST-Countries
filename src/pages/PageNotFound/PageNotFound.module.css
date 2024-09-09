@@ -1,0 +1,25 @@
+.pageNotFound {
+  height: calc(100vh - 8rem);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2rem;
+  transition: all 0.2s;
+}
+
+.pageNotFound.darkTheme {
+  background-color: var(--dark-blue-2);
+  color: var(--white);
+}
+
+.pageNotFound__code {
+  font-size: 1.6rem;
+}
+
+.pageNotFound__heading {
+  font-size: 4.8rem;
+}
+
+.pageNotFound__message {
+  font-size: 1.6rem;
+}
