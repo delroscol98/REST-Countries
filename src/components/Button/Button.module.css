@@ -1,6 +1,6 @@
 .button {
-  width: 100%;
-  height: 100%;
+  width: 13.6rem;
+  height: 4rem;
   background: var(--white);
   border: none;
   border-radius: 0.2rem;
@@ -13,9 +13,24 @@
 .button:hover {
   cursor: pointer;
   transform: translateY(-0.3rem);
+  background-color: var(--dark-blue-1);
+  color: var(--white);
+}
+
+.button:hover > a {
+  color: var(--white);
 }
 
 .button.darkTheme {
   background: var(--dark-blue-2);
   color: var(--white);
+}
+
+.button.darkTheme:hover {
+  background-color: var(--white);
+  color: var(--dark-blue-3);
+}
+
+.button.darkTheme:hover > a {
+  color: var(--dark-blue-3);
 }

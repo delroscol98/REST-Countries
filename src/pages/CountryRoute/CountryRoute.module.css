@@ -2,7 +2,7 @@
   padding: 4rem 2.8rem;
   background: inherit;
   transition: all 0.2s;
-  height: calc(100vh - 8rem);
+  min-height: calc(100vh - 8rem);
 }
 
 @media screen and (width >= 48em) {
@@ -111,8 +111,15 @@
 }
 
 .countryRoute__borderCountries__btnContainer {
-  display: grid;
-  justify-content: start;
+  display: flex;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, 9.6rem);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--dark-blue-3);
+}
+
+.link.darkTheme {
+  color: var(--white);
 }

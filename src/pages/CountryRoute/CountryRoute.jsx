@@ -105,9 +105,16 @@ function CountryRoute({ country }) {
                 className={styles.countryRoute__borderCountries__btnContainer}
               >
                 {country.borders.map((border) => (
-                  <Link to={`../${countryCodes[border]}`} key={border}>
-                    <Button>{countryCodes[border]}</Button>
-                  </Link>
+                  <Button key={border}>
+                    <Link
+                      className={`${styles.link} ${
+                        isDarkTheme ? styles.darkTheme : ""
+                      }`}
+                      to={`../${countryCodes[border]}`}
+                    >
+                      {countryCodes[border]}
+                    </Link>
+                  </Button>
                 ))}
               </div>
             </article>
