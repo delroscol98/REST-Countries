@@ -9,14 +9,11 @@ function Homepage() {
   const { countriesList, countriesPerPage } = useCountries();
   const pageNums = Math.ceil(countriesList.length / countriesPerPage);
   return (
-    <main>
-      <Header />
-      <Countries>
-        <CountriesHeader />
-        <CountriesList />
-        {pageNums > 1 && <Pagination />}
-      </Countries>
-    </main>
+    <Countries>
+      <CountriesHeader />
+      <CountriesList />
+      {pageNums > 1 && <Pagination />}
+    </Countries>
   );
 }
 

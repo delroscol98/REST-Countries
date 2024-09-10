@@ -2,11 +2,9 @@ import styles from "./Header.module.css";
 import DarkIcon from "../../../public/images/moon-outline.svg";
 import LightIcon from "../../../public/images/sunny-outline.svg";
 import useTheme from "../../hooks/useTheme";
-import { useNavigate } from "react-router-dom";
 
 function Header() {
   const { isDarkTheme, handleDarkTheme } = useTheme();
-  const navigate = useNavigate();
 
   return (
     <header
@@ -16,7 +14,6 @@ function Header() {
         className={`${styles.header__heading} ${
           isDarkTheme ? styles.darkTheme : ""
         }`}
-        onClick={() => navigate("/")}
       >
         Where in the world?
       </h1>
