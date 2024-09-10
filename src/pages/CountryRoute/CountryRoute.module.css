@@ -113,6 +113,7 @@
 .countryRoute__borderCountries__btnContainer {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .link {
