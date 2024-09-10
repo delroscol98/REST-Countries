@@ -1,4 +1,4 @@
-import useCountries from "../../hooks/useCounties";
+import useCountries from "../../hooks/useCountries";
 import useTheme from "../../hooks/useTheme";
 import Button from "../Button/Button";
 import styles from "./Pagination.module.css";

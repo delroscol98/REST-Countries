@@ -3,7 +3,7 @@ import Countries from "../../components/Countries/Countries";
 import CountriesHeader from "../../components/CountriesHeader/CountriesHeader";
 import CountriesList from "../../components/CountriesList/CountriesList";
 import Pagination from "../../components/Pagination/Pagination";
-import useCountries from "../../hooks/useCounties";
+import useCountries from "../../hooks/useCountries";
 
 function Homepage() {
   const { countriesList, countriesPerPage } = useCountries();

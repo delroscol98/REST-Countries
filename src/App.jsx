@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import useCountries from "./hooks/useCounties";
+import useCountries from "./hooks/useCountries";
 import SpinnerFullPage from "./components/SpinnerFullPage/SpinnerFullPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 

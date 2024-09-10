@@ -2,7 +2,7 @@ import styles from "./CountriesHeader.module.css";
 import SearchIcon from "../../../public/images/search-outline.svg";
 import ChevronIcon from "../../../public/images/chevron-down-outline.svg";
 import useTheme from "../../hooks/useTheme";
-import useCountries from "../../hooks/useCounties";
+import useCountries from "../../hooks/useCountries";
 
 function CountriesHeader() {
   const { isDarkTheme } = useTheme();

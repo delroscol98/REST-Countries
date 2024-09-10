@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import useCountries from "../../hooks/useCounties";
+import useCountries from "../../hooks/useCountries";
 import Country from "../Country/Country";
 import styles from "./CountriesList.module.css";
 
