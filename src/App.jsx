@@ -15,8 +15,8 @@ function App() {
           <Route path="/" element={<MainPage />}>
             <Route index element={<Homepage />} />
             <Route path="/:countryName" element={<CountryRoute />} />
-            <Route path="*" element={<PageNotFound />} />
           </Route>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

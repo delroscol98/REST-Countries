@@ -1,3 +1,4 @@
+import Header from "../../components/Header/Header";
 import useTheme from "../../hooks/useTheme";
 import styles from "./PageNotFound.module.css";
 
@@ -5,6 +6,7 @@ function PageNotFound() {
   const { isDarkTheme } = useTheme();
   return (
     <>
+      <Header />
       <div
         className={`${styles.pageNotFound} ${
           isDarkTheme ? styles.darkTheme : ""

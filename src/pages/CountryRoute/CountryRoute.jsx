@@ -2,7 +2,7 @@ import Button from "../../components/Button/Button";
 import useTheme from "../../hooks/useTheme";
 import styles from "./CountryRoute.module.css";
 import { countryCodes } from "../../utilities/countryCodes";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import useCountries from "../../hooks/useCountries";
 import { useEffect } from "react";
 import PageNotFound from "../PageNotFound/PageNotFound";
@@ -16,7 +16,7 @@ function CountryRoute() {
   const country = countriesList.find((country) => country.name === countryName);
 
   if (!country) {
-    return <PageNotFound />;
+    return <Navigate to="/" />;
   }
 
   return (
