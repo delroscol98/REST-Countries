@@ -23,8 +23,8 @@ function App() {
                 element={<CountryRoute country={country} />}
               />
             ))}
-            <Route path="*" element={<PageNotFound />} />
           </Route>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

@@ -6,6 +6,7 @@ function PageNotFound() {
   const { isDarkTheme } = useTheme();
   return (
     <>
+      <Header />
       <div
         className={`${styles.pageNotFound} ${
           isDarkTheme ? styles.darkTheme : ""

@@ -1,5 +1,4 @@
 import Button from "../../components/Button/Button";
-import Header from "../../components/Header/Header";
 import useTheme from "../../hooks/useTheme";
 import styles from "./CountryRoute.module.css";
 import { countryCodes } from "../../utilities/countryCodes";
