@@ -4,6 +4,8 @@ import styles from "./CountryRoute.module.css";
 import { countryCodes } from "../../utilities/countryCodes";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import useCountries from "../../hooks/useCountries";
+import { useEffect } from "react";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 function CountryRoute() {
   const { isDarkTheme } = useTheme();
@@ -12,6 +14,10 @@ function CountryRoute() {
   const navigate = useNavigate();
 
   const country = countriesList.find((country) => country.name === countryName);
+
+  if (!country) {
+    return <PageNotFound />;
+  }
 
   return (
     <div

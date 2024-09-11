@@ -10,7 +10,7 @@ function CountriesList() {
     <div className={styles.countriesList}>
       {renderedCountries.map((country) => (
         <Link
-          to={`./${country.name}`}
+          to={`/${country.name}`}
           key={country.name}
           className={styles.countriesList__link}
         >
